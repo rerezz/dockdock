@@ -28,14 +28,15 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+
     - task: Npm@1
       inputs:
         command: 'install'
-        workingDir: '$(Build.SourcesDirectory)/Client/app'
+        workingDir: '/Client/app'
     - task: Npm@1
       inputs:
         command: 'custom'
-        workingDir: '$(Build.SourcesDirectory)/Client/app'
+        workingDir: '/Client/app'
         customCommand: 'run build'
     - task: Docker@2
       displayName: Build and push an image to container registry
