@@ -20,4 +20,4 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '/Client/app'
+    workingDir: './Client/app'
